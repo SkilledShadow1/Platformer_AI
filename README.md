@@ -3,7 +3,7 @@ This is a game I am currently working on, but it has turned more into an AI proj
 
 To give you a glimpse of my AI I am currently working on, I created a video below to show you what it can do currently.
 
-If you want to see some of the scripts I wrote, go to the Assets folder and then click scripts
+If you want to see some of the scripts I wrote, go to the Assets folder and then click on the Scripts folder.
 
 
 
