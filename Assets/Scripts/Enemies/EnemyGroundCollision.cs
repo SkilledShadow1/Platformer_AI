@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 public class EnemyGroundCollision : MonoBehaviour
 {
     [SerializeField] Tile groundedTile;
+    [SerializeField] WaypointCreator waypointCreator;
+    [SerializeField] GameObject tilemap;
     Tilemap t;
     Collider2D enemyCollider;
     public Vector3Int lastHitWaypoint;
@@ -13,7 +15,8 @@ public class EnemyGroundCollision : MonoBehaviour
 
     private void Awake()
     {
-        t = transform.parent.parent.gameObject.GetComponentInChildren<Tilemap>();
+        tilemap = GameObject.FindGameObjectWithTag("Tilemap");
+        t = tilemap.GetComponent<Tilemap>();
         enemyCollider = GetComponent<Collider2D>();
         lastHitWaypoint = Vector3Int.CeilToInt(Vector3.positiveInfinity);
     }
@@ -32,7 +35,7 @@ public class EnemyGroundCollision : MonoBehaviour
     {
         Vector3Int cell;
         RaycastHit2D hit;
-        hit = Physics2D.Raycast(new Vector2(enemyCollider.bounds.center.x, enemyCollider.bounds.min.y), Vector2.down, 0.1f, ~0);
+        hit = Physics2D.Raycast(new Vector2(enemyCollider.bounds.center.x, enemyCollider.bounds.min.y), Vector2.down, 0.1f);
         if (hit) 
         { 
 
@@ -69,6 +72,7 @@ public class EnemyGroundCollision : MonoBehaviour
         grounded = Grounded();
 
         FindCollidingTile();
+        ColorTiles();
 
     }
 
@@ -77,15 +81,15 @@ public class EnemyGroundCollision : MonoBehaviour
     public bool Grounded()
     {
         //Debug.DrawRay(new Vector3(actualEnemyHitbox.bounds.min.x, actualEnemyHitbox.bounds.min.y, 0), new Vector3(actualEnemyHitbox.bounds.min.x, actualEnemyHitbox.bounds.min.y, 0), Color.cyan);
-        RaycastHit2D hit = Physics2D.Raycast(new Vector3(enemyCollider.bounds.min.x - 0.02f, enemyCollider.bounds.min.y, 0), Vector2.down, groundedRaycastDist, LayerMask.GetMask("Default"));
+        RaycastHit2D hit = Physics2D.Raycast(new Vector3(enemyCollider.bounds.min.x - 0.02f, enemyCollider.bounds.min.y, 0), Vector2.down, groundedRaycastDist);
         if (hit)
             return true;
 
-        hit = Physics2D.Raycast(new Vector3(enemyCollider.bounds.center.x, enemyCollider.bounds.min.y, 0), Vector2.down, groundedRaycastDist, LayerMask.GetMask("Default"));
+        hit = Physics2D.Raycast(new Vector3(enemyCollider.bounds.center.x, enemyCollider.bounds.min.y, 0), Vector2.down, groundedRaycastDist);
         if (hit)
             return true;
 
-        hit = Physics2D.Raycast(new Vector3(enemyCollider.bounds.max.x + 0.02f, enemyCollider.bounds.min.y, 0), Vector2.down, groundedRaycastDist, LayerMask.GetMask("Default"));
+        hit = Physics2D.Raycast(new Vector3(enemyCollider.bounds.max.x + 0.02f, enemyCollider.bounds.min.y, 0), Vector2.down, groundedRaycastDist);
         if (hit)
             return true;
 
