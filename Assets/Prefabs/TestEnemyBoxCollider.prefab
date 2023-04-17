@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 101526835227457979}
   - component: {fileID: 4935166949356779415}
   - component: {fileID: -5830030393041354495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestEnemyBoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1852612877152047954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.5, y: 10, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -147,5 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemapObject: {fileID: 0}
+  groundedRaycastDist: 0.04
   pathWorking: 0
   yBound: 1
