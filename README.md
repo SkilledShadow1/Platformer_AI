@@ -5,8 +5,6 @@ To give you a glimpse of my AI I am currently working on, I created a video belo
 
 If you want to see some of the scripts I wrote, go to the Assets folder and then click on the Scripts folder.
 
-
-
-Video of AI: https://user-images.githubusercontent.com/86324009/211977077-59871245-bbe9-407c-ba82-8ed83f587b8d.mp4
-
-Gifs of AI: ![](https://github.com/Recoil-Game/AI-Example-Video-1.gif)
+Gifs of AI:
+![AI Example Video 1](https://user-images.githubusercontent.com/86324009/232611629-066592f7-6064-45d5-a62b-7c4e2e9545de.gif)
+![AI Example Video 2](https://user-images.githubusercontent.com/86324009/232611647-cb24ffdd-f945-4971-8f5d-b32bff079fd3.gif)
